@@ -1,0 +1,428 @@
+/* Academic site stylesheet, closely following the visual language of
+   Theodor Misiakiewicz's Jemdoc website, with responsive HTML5 layout. */
+
+:root {
+  --blue: #527bbd;
+  --blue-dark: #224b8d;
+  --blue-current: #022b6d;
+  --menu-bg: #f6f6f6;
+  --line: #dddddd;
+  --rule: #aaaaaa;
+  --text: #111111;
+  --muted: #555555;
+  --page-width: 1120px;
+  --menu-width: 168px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #ffffff;
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  padding: 0 0 8px;
+  background: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 8px;
+  z-index: 10;
+  padding: 8px 12px;
+  background: #ffffff;
+  color: var(--blue-dark);
+  border: 1px solid var(--blue-dark);
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+.site-shell {
+  display: grid;
+  grid-template-columns: var(--menu-width) minmax(0, 1fr);
+  width: min(100%, var(--page-width));
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+}
+
+#layout-menu {
+  align-self: stretch;
+  width: var(--menu-width);
+  padding: 0.5em 8px 1.5em;
+  background: var(--menu-bg);
+  border: 1px solid var(--line);
+  font-size: 1em;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.menu-group + .menu-group {
+  margin-top: 0.8em;
+}
+
+.menu-category {
+  margin: 0;
+  padding: 0.2em 0 0.1em;
+  border-bottom: 1px solid gray;
+  font-weight: bold;
+}
+
+.menu-item {
+  padding-left: 16px;
+  text-indent: -16px;
+}
+
+.menu-item a {
+  display: inline-block;
+  margin-left: 0.5em;
+  line-height: 1.5em;
+}
+
+#layout-menu a:link,
+#layout-menu a:visited {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+#layout-menu a:hover,
+#layout-menu a:focus-visible {
+  color: var(--blue-current);
+  text-decoration: none;
+}
+
+#layout-menu a.current:link,
+#layout-menu a.current:visited {
+  color: var(--blue-current);
+  border-bottom: 1px solid gray;
+}
+
+#layout-content {
+  width: 100%;
+  max-width: 930px;
+  padding: 0 1em 2em;
+  background: #ffffff;
+  text-align: left;
+}
+
+#toptitle {
+  margin-bottom: 1.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 3px double gray;
+}
+
+#toptitle h1 {
+  margin: 0.5em 0 0;
+  padding: 0 0 0.1em;
+  border-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+  color: var(--blue);
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: 1.65em;
+}
+
+h2 {
+  padding-top: 0.8em;
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1.1em;
+  border-bottom: 0;
+}
+
+h2 + h3 {
+  padding-top: 0.2em;
+}
+
+p {
+  margin: 0 0 0.8em;
+  padding: 0;
+}
+
+a {
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  border-bottom: 1px dotted gray;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+ul,
+ol,
+dl {
+  margin-top: 0.2em;
+  margin-bottom: 0.8em;
+  padding-top: 0;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: square;
+}
+
+ol {
+  list-style-position: outside;
+}
+
+p + ul,
+p + ol {
+  margin-top: -0.5em;
+}
+
+li p {
+  margin-bottom: 0.35em;
+}
+
+.imgtable {
+  width: auto;
+  border: 0;
+  border-collapse: collapse;
+}
+
+.imgtable td {
+  padding: 2px 0.5em;
+  border: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.profile-photo {
+  display: block;
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  border: 0;
+}
+
+.contact-block {
+  min-width: 310px;
+}
+
+.contact-links {
+  margin-top: 0.65em;
+  font-size: 0.96em;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.95em;
+}
+
+.paper-list {
+  padding-left: 1.4em;
+}
+
+.paper-list > li {
+  margin-bottom: 0.75em;
+}
+
+.paper-title {
+  font-weight: normal;
+}
+
+.venue {
+  font-style: italic;
+}
+
+.tag {
+  font-weight: bold;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1.25em;
+  margin-bottom: 1em;
+}
+
+.timeline .date {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.timeline .details {
+  grid-column: 1 / -1;
+  margin-top: 0.15em;
+  color: #222222;
+}
+
+.compact-list li {
+  margin-bottom: 0.35em;
+}
+
+.footer {
+  margin-top: 4em;
+  padding-top: 0.3em;
+  border-top: 1px solid #c0c0c0;
+  color: #888888;
+  font-size: 0.82em;
+}
+
+.footer a {
+  color: #6f8f9f;
+}
+
+@media (min-width: 1121px) {
+  .site-shell {
+    margin-left: 0;
+  }
+
+  #layout-menu {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 15.5px;
+  }
+
+  .site-shell {
+    display: block;
+    width: 100%;
+  }
+
+  #layout-menu {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    padding: 0.55em 0.75em 0.7em;
+    white-space: normal;
+    border-width: 0 0 1px;
+  }
+
+  .menu-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65em 1em;
+  }
+
+  .menu-group + .menu-group {
+    margin-top: 0;
+  }
+
+  .menu-item {
+    display: inline;
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  .menu-item a {
+    margin: 0 0.65em 0 0;
+    line-height: 1.65;
+  }
+
+  #layout-content {
+    max-width: none;
+    padding: 0 0.85em 2em;
+  }
+
+  #toptitle {
+    margin-bottom: 1.1em;
+  }
+
+  .imgtable,
+  .imgtable tbody,
+  .imgtable tr,
+  .imgtable td {
+    display: block;
+    width: 100%;
+  }
+
+  .imgtable td {
+    padding: 0 0 0.75em;
+  }
+
+  .profile-photo {
+    width: min(100%, 360px);
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .contact-block {
+    min-width: 0;
+  }
+
+  .timeline > li {
+    display: block;
+  }
+
+  .timeline .date {
+    margin-top: 0.1em;
+    text-align: left;
+    font-style: italic;
+  }
+
+  .timeline .details {
+    margin-top: 0.15em;
+  }
+}
+
+@media (max-width: 430px) {
+  .menu-groups {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.18em;
+  }
+}
+
+@media print {
+  #layout-menu,
+  .skip-link,
+  .footer {
+    display: none;
+  }
+
+  #layout-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: #000000;
+  }
+}
