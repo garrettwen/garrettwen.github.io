@@ -13,7 +13,7 @@ Content was reconciled in August 2026 against:
 
 - the current four-page CV in "files/CV_Garrett_Wen.pdf";
 - Yale Statistics and Data Science's public Gang Wen profile;
-- the profile photograph published on that Yale page;
+- the profile photograph supplied directly by Garrett in August 2026;
 - Gang (Garrett) Wen's verified Google Scholar profile;
 - arXiv records for all listed preprints;
 - the Nature Computational Science DOI record;

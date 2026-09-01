@@ -254,7 +254,7 @@ li p { margin-bottom: 0.42em; }
 
 .imgtable tr {
   display: grid;
-  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr);
+  grid-template-columns: minmax(240px, 292px) minmax(0, 1fr);
   gap: clamp(28px, 5vw, 52px);
   align-items: stretch;
 }
@@ -273,9 +273,9 @@ li p { margin-bottom: 0.42em; }
   height: auto;
   min-height: 0;
   max-height: none;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center;
   border: 1px solid var(--line);
   box-shadow: 12px 12px 0 var(--blue-soft);
 }
@@ -605,10 +605,11 @@ li p { margin-bottom: 0.42em; }
   .imgtable tr { grid-template-columns: 1fr; gap: 28px; }
 
   .profile-photo {
-    width: min(100%, 360px);
+    width: min(100%, 320px);
     height: auto;
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1;
+    margin-inline: auto;
   }
 
   .contact-block { padding: 24px !important; }
