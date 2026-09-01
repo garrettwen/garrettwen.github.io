@@ -1,6 +1,6 @@
 # Garrett G. Wen — academic homepage
 
-Source for <https://pkumath.github.io/>.
+Source for <https://garrettwen.github.io/>.
 
 The visual system follows the academic Jemdoc style used by Theodor
 Misiakiewicz: Georgia typography, a compact grouped navigation column, blue
